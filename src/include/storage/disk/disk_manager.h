@@ -25,14 +25,14 @@ class DiskManager{
    * The prototype for this function is OpenFile(String filename) and returns an error code.
    * The function opens the file specified by the filename.
    */
-  bool OpenFile(char *filename);
+  int OpenFile(std::string filename);
 
   /**
    * CloseFile function is called when the data file needs to be closed. The protoype is
    * CloseFile() and returns an error code. This function closes the file that is in current use.
    * This function should only be called as the database is changed or a the program closes.
    */
-  bool CloseFile();
+  int CloseFile();
 
   /**
    * ReadPage function is called by the FixPage function in the buffer manager. This
@@ -56,7 +56,7 @@ class DiskManager{
   /**
    * GetFile function returns the current file.
    */
-  void GetFile();
+  FILE *GetFile();
 
   /**
    * IncNumPages function increments the page counter.
@@ -66,7 +66,7 @@ class DiskManager{
   /**
    * GetNumPages function returns the page counter.
    */
-  void GetNumPages();
+  int GetNumPages();
 
   /**
    * SetUse function looks sets the bit in the pages array. This array keeps track of the
@@ -81,7 +81,7 @@ class DiskManager{
   /**
    * GetUse function returns the current use_bit for the corresponding page_id.
    */
-  void GetUse(int page_id);
+  int GetUse(int page_id);
 
  private:
   FILE *currFile;

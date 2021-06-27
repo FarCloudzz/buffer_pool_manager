@@ -117,4 +117,4 @@ class BufferPoolManager {
  // Hash Table
   int ftop[DEFBUFSIZE];
   BCB* ptof[DEFBUFSIZE];
-}
+};
